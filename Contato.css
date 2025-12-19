@@ -1,0 +1,154 @@
+/* Contato.css - Additional styles for the contact page */
+
+/* Ensure the contact section has proper spacing and background */
+.contact {
+    padding: 100px 0 80px; /* Adjust top padding to account for fixed header */
+    background:
+        linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+        url('imagens/mining-1920-x-1080-background-a9jzbwbpvh9cqz74.jpg') no-repeat center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    color: #FFF;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    color: #FFF;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.info-item i {
+    font-size: 2rem;
+    min-width: 32px;
+    color: #F7B928;
+}
+
+.info-item h4 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+    color: #1A1A1A;
+}
+
+.info-item p {
+    margin: 0;
+    color: #7D7D7D;
+    font-size: 1rem;
+}
+
+.contact form {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+    backdrop-filter: blur(10px);
+}
+
+.contact input,
+.contact textarea {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #F7B928;
+    box-shadow: 0 0 10px rgba(247, 185, 40, 0.3);
+}
+
+.contact button {
+    padding: 15px;
+    background: #F7B928;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+    background: #DB9A1D;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact {
+        padding: 80px 0 60px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-info {
+        margin-top: 0;
+    }
+
+    .contact form {
+        max-width: 100%;
+        width: 100%;
+    }
+}
