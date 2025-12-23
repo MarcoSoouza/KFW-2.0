@@ -352,7 +352,7 @@ nav ul li a:hover {
 }
 
 .sobre .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -360,7 +360,7 @@ nav ul li a:hover {
 }
 
 .sobre h2 {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: var(--black);
     font-size: 2.5rem;
     font-weight: 700;
@@ -368,11 +368,69 @@ nav ul li a:hover {
     animation: fadeInUp 1s ease-out;
 }
 
-.sobre p {
+.sobre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.sobre-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    width: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.sobre-item:hover::before {
+    transform: scaleX(1);
+}
+
+.sobre-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+}
+
+.sobre-item .service-icon {
+    font-size: 3rem;
+    color: var(--yellow);
+    min-width: 60px;
+    transition: color 0.3s ease;
+}
+
+.sobre-item:hover .service-icon {
+    color: var(--yellow-dark);
+}
+
+.sobre-item p {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--gray);
+    margin: 0;
     animation: fadeInUp 1s ease-out 0.3s both;
+    position: relative;
+    z-index: 1;
 }
 
 /* CONTATO */
