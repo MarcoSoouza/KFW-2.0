@@ -71,14 +71,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Checkout button
     document.getElementById('checkout-btn').addEventListener('click', function() {
-        if (cart.length > 0) {
-            alert('Compra finalizada! Total: R$ ' + document.getElementById('cart-total').textContent);
-            cart = [];
-            updateCart();
-            modal.style.display = 'none';
-        } else {
+        if (cart.length === 0) {
             alert('Carrinho vazio!');
+            return;
         }
+
+        const address = document.getElementById('address-input').value.trim();
+        if (!address) {
+            alert('Por favor, informe o endereço de entrega.');
+            return;
+        }
+
+        // Generate WhatsApp message
+        let message = 'Olá! Gostaria de finalizar a compra dos seguintes itens:\n\n';
+        cart.forEach(item => {
+            message += `- ${item.name}: R$ ${item.price}\n`;
+        });
+        message += `\nTotal: R$ ${document.getElementById('cart-total').textContent}\n`;
+        message += `Endereço de entrega: ${address}\n\n`;
+        message += 'Aguardo confirmação do pedido.';
+
+        // Encode message for WhatsApp URL
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/5511932282468?text=${encodedMessage}`;
+
+        // Open WhatsApp
+        window.open(whatsappURL, '_blank');
+
+        // Clear cart and close modal
+        cart = [];
+        updateCart();
+        document.getElementById('address-input').value = '';
+        modal.style.display = 'none';
     });
 
     // Initial cart update

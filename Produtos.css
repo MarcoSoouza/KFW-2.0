@@ -235,6 +235,35 @@
     background: var(--yellow-dark);
 }
 
+.delivery-address {
+    margin-top: 20px;
+}
+
+.delivery-address label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.delivery-address textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    min-height: 80px;
+    box-sizing: border-box;
+}
+
+.delivery-address textarea:focus {
+    outline: none;
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .produtos {
